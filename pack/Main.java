@@ -38,7 +38,7 @@ public class Main implements FizzBuzz{
 	
 	@Override
 	public void print(int from, int to) {
-		for (int i : IntStream.range(from, to).toArray())
+		for (int i : IntStream.rangeClosed(from, to).toArray())
 			if (i % 3 == 0 && i % 5 == 0) {
 				System.out.println("" + i + " - " + "FizzBuzz");
 			} else if (i % 3 == 0) {
