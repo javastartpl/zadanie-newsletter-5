@@ -10,7 +10,7 @@ public class App {
         int from = scanner.nextInt();
         System.out.println("Podaj ostatni liczbę ciagu liczb całkowitych:");
         int to = scanner.nextInt();
-        selectMethod();
+        selectMethodInfo();
         int selectedMethod = scanner.nextInt();
         switch (selectedMethod) {
             case 1: {
@@ -33,7 +33,7 @@ public class App {
         }
     }
 
-    private static void selectMethod() {
+    private static void selectMethodInfo() {
         System.out.println("Krórej metody chcesz użyć do obliczeń:");
         System.out.println("1 - klasyczne uzycie pętli");
         System.out.println("2 - metoda z zastosowaniem stream");
