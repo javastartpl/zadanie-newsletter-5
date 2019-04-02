@@ -8,7 +8,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj początek ciągu liczb całkowitych:");
         int from = scanner.nextInt();
-        System.out.println("Podaj ostatni liczbę ciagu liczn całkowitych:");
+        System.out.println("Podaj ostatni liczbę ciagu liczb całkowitych:");
         int to = scanner.nextInt();
         selectMethod();
         int selectedMethod = scanner.nextInt();
