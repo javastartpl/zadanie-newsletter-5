@@ -3,15 +3,33 @@ package fizzBuzz;
 import java.util.Scanner;
 
 public class App {
+
+    private static final int CLASSIC_LOOP = 1;
+    private static final int STREAMS = 2;
+    private static final int FOREACH = 3;
+
     public static void main(String[] args) {
-        FizzBuzz fizzBuzz = null;
+
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Podaj początek ciągu liczb całkowitych:");
         int from = scanner.nextInt();
-        System.out.println("Podaj ostatni liczbę ciagu liczb całkowitych:");
-        int to = scanner.nextInt();
+        int to;
+        do {
+            System.out.println("Podaj ostatnią liczbę ciagu liczb całkowitych, liczba nie moze byc mniejsza lub równa pierwszej:");
+            to = scanner.nextInt();
+        }
+        while(to<=from);
+
         selectMethodInfo();
+
         int selectedMethod = scanner.nextInt();
+
+        executeFizzBuzz(from, to, selectedMethod);
+    }
+
+    private static void executeFizzBuzz(int from, int to, int selectedMethod) {
+        FizzBuzz fizzBuzz = null;
         switch (selectedMethod) {
             case 1: {
                 fizzBuzz = new ClassicFizzBuzz();
@@ -35,8 +53,8 @@ public class App {
 
     private static void selectMethodInfo() {
         System.out.println("Krórej metody chcesz użyć do obliczeń:");
-        System.out.println("1 - klasyczne uzycie pętli");
-        System.out.println("2 - metoda z zastosowaniem stream");
-        System.out.println("3 - metoda z zastosowaniem pętli for each");
+        System.out.println(CLASSIC_LOOP + " - klasyczne uzycie pętli");
+        System.out.println(STREAMS + " - metoda z zastosowaniem stream");
+        System.out.println(FOREACH + " - metoda z zastosowaniem pętli for each");
     }
 }
